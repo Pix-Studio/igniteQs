@@ -1,0 +1,12 @@
+<div class="login-container">
+  <div *ngIf="(user$ | async) as user; else loginTemplate">
+    <h3>Welcome, {{ user.displayName }}</h3>
+    <p>Email: {{ user.email }}</p>
+    <button (click)="logout()">Logout</button>
+  </div>
+
+  <ng-template #loginTemplate>
+    <h3>Please log in</h3>
+    <button (click)="login()">Login with Google</button>
+  </ng-template>
+</div>
