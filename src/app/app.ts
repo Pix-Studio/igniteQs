@@ -1,14 +1,15 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import { AppRoutingModule } from './app-routing.module';
+import { routes } from './app.routes';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, AppRoutingModule],
+  standalone: true,
+  imports: [RouterOutlet],
   template: `
     <h1>Hello, {{ title() }}</h1>
 
-    <router-outlet />
+    <router-outlet></router-outlet>
   `,
   styles: [],
 })
