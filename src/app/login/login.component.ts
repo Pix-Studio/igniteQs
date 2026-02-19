@@ -17,9 +17,9 @@ export class LoginComponent {
 
   // Trigger Google Sign-In
   login() {
-    this.authService.googleSignIn().then((result) => {
+    this.authService.googleSignIn().then((result: any) => {
       console.log('User signed in:', result);
-    }).catch((error) => {
+    }).catch((error: any) => {
       console.error('Sign-in error:', error);
     });
   }
@@ -28,7 +28,7 @@ export class LoginComponent {
   logout() {
     this.authService.signOut().then(() => {
       console.log('User signed out');
-    }).catch((error) => {
+    }).catch((error: any) => {
       console.error('Sign-out error:', error);
     });
   }

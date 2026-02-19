@@ -1,8 +1,8 @@
 <div class="login-container">
-  @if (user$ | async as user) {
+  @if (user$) {
   <div>
-    <h3>Welcome, {{ user.displayName }}</h3>
-    <p>Email: {{ user.email }}</p>
+    <h3>Welcome, {{ (user$ | async)?.displayName }}</h3>
+    <p>Email: {{ (user$ | async)?.email }}</p>
     <button (click)="logout()">Logout</button>
   </div>
 } @else {
