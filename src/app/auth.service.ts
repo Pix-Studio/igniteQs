@@ -7,7 +7,7 @@ import 'firebase/compat/auth';
   providedIn: 'root'
 })
 export class AuthService {
-  constructor(private afAuth: AngularFireAuth) {}
+  constructor(@Inject(AngularFireAuth) private afAuth: AngularFireAuth) {}
 
   // Sign in with Google
   googleSignIn() {
