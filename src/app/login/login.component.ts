@@ -1,13 +1,13 @@
 import { Component } from '@angular/core';
+import { AsyncPipe, JsonPipe } from '@angular/common';
 import { AuthService } from '../auth.service';
-
 import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-login',
   templateUrl: './login.component.html',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule, AsyncPipe, JsonPipe],
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
@@ -26,7 +26,7 @@ export class LoginComponent {
 
   // Trigger Sign-Out
   logout() {
-    this.authService.signOut().then(() => {
+    this.authService.logout().then(() => {
       console.log('User signed out');
     }).catch((error: any) => {
       console.error('Sign-out error:', error);
